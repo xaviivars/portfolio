@@ -34,4 +34,26 @@ next.addEventListener('click', () => {
   resetAutoplay();
 });
 
+const carrusel = document.querySelector('.carrusel');
+
+carrusel.addEventListener('mouseenter', () => clearInterval(autoplayInterval));
+carrusel.addEventListener('mouseleave', () => startAutoplay());
+
 startAutoplay();
+
+const form = document.getElementById('contact-form');
+const formStatus = document.getElementById('form-status');
+
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const nombre = document.getElementById('nombre').value;
+    const email = document.getElementById('email').value;
+    const mensaje = document.getElementById('mensaje').value;
+
+    //only demo
+    formStatus.textContent = `Gracias ${nombre}, tu mensaje ha sido recibido: "${mensaje}"`;
+    formStatus.style.color = 'green';
+
+    form.reset();
+});
