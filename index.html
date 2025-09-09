@@ -7,23 +7,33 @@
     <link rel = "stylesheet" href="css/styles.css">
 </head>
 <body>
-    <header>Xavier Ivars
-    <nav class = "menu">
+    <header>
+        <h1>Xavier Ivars</h1>
+        <nav class = "menu">
             <a href="#">Proyectos</a>
             <a href="#">Sobre mí</a>
             <a href="#">Contacto</a>
-    </nav>
+        </nav>
     </header>
 
     <main>
         <section id ="proyectos">
             <h2>Proyectos</h2>
-            <p>Empty.</p>
+            <div class="carrusel">
+                <div class="slides">
+                    <div class="slide">Proyecto 1</div>
+                    <div class="slide">Proyecto 2</div>
+                    <div class="slide">Proyecto 3</div>
+                </div>
+                <button class="prev">&lt;</button>
+                <button class="next">&gt;</button>
+            </div>
         </section>
 
         <section id ="sobre-mi">
             <h2>Sobre mí</h2>
-            <p>Empty.</p>
+            <p>Apasionado por el mundo de la informática y la tecnología. Actualmente estoy cursando el último año del Grado en Ingeniería Informática 
+            por la Universidad Politécnica de Valencia. En busca de realizar las prácticas profesionales para ganar experiencia en el ámbito profesional.</p>
         </section>
 
         <section id ="contacto">
@@ -35,5 +45,6 @@
     <footer>
         <small>2025 - Xavier Ivars</small>
     </footer>
+    <script src="js/main.js"></script>
 </body>
 </html>
