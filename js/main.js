@@ -27,8 +27,8 @@ function startAutoplay() {
 
 // Reinicia el autoplay tras interacción del usuario
 function resetAutoplay() {
-    clearInterval(autoplayInterval);
-    setTimeout(startAutoplay, autoplayDelay);
+  clearInterval(autoplayInterval);
+  setTimeout(startAutoplay, autoplayDelay);
 }
 
 // Eventos para los botones (prev)
@@ -63,15 +63,42 @@ const formStatus = document.getElementById('form-status'); // Mensaje de estado
 
 // Evento al enviar el formulario
 form.addEventListener('submit', (e) => {
-    e.preventDefault(); // Evita recargar la página
+  e.preventDefault(); // Evita recargar la página
 
-    const nombre = document.getElementById('nombre').value;
-    const email = document.getElementById('email').value;
-    const mensaje = document.getElementById('mensaje').value;
+  const nombre = document.getElementById('nombre').value;
+  const email = document.getElementById('email').value;
+  const mensaje = document.getElementById('mensaje').value;
 
-    //only demo
-    formStatus.textContent = `Gracias ${nombre}, tu mensaje ha sido recibido: "${mensaje}"`;
-    formStatus.style.color = 'green';
+  //only demo
+  formStatus.textContent = `Gracias ${nombre}, tu mensaje ha sido recibido: "${mensaje}"`;
+  formStatus.style.color = 'green';
 
-    form.reset();
+  form.reset();
 });
+
+// ====================
+// Animación de terminal
+// ====================
+
+const text = " Xavier Ivars";
+const typed = document.getElementById("typed");
+let i = 0;
+
+function typeWriterLoop() {
+  typed.textContent = "";
+  i = 0;
+
+  function loop() {
+    if (i < text.length) {
+      typed.textContent += text.charAt(i);
+      i++;
+      setTimeout(loop, 150);
+    } else {
+      setTimeout(typeWriterLoop, 5000); // espera 2s y vuelve a empezar
+    }
+  }
+  loop();
+}
+
+typeWriterLoop();
+
