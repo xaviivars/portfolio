@@ -5,27 +5,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi Portfolio</title>
     <link rel = "stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
-        <h1>Xavier Ivars</h1>
+        <h1>ivadev ( )</h1>
         <nav class = "menu">
             <a href="#">Proyectos</a>
-            <a href="#">Sobre mí</a>
+            <a href="#">Experiencia</a>
             <a href="#">Contacto</a>
         </nav>
     </header>
 
     <section id="intro">
         <img src="img/xaviivars.png" alt="Xavier Ivars" class="profile-pic">
+
+        <div class="intro-content">
             <div id="terminal">
                 <span class="cursor">>></span><span id="typed"></span>
             </div>
-        <p>
-            Apasionado por el mundo de la informática y la tecnología. Actualmente estoy cursando 
-            el último año del Grado en Ingeniería Informática por la Universidad Politécnica de Valencia. 
-            En busca de realizar las prácticas profesionales para ganar experiencia en el ámbito laboral.
-        </p>
+
+            <p>
+                Apasionado por el mundo de la informática y la tecnología. Actualmente estoy cursando 
+                el último año del Grado en Ingeniería Informática por la Universidad Politécnica de Valencia. 
+                En busca de realizar las prácticas profesionales para ganar experiencia en el ámbito laboral.
+            </p>
+
+            <div class="intro-actions">
+                <a href="https://github.com/xaviivars" target="_blank" class="social github" title="GitHub">
+                    <img src="img/github.svg" alt="GitHub">
+                </a>
+                <a href="https://www.linkedin.com/in/xaviivars" target="_blank" class="social linkedin" title="LinkedIn">
+                    <img src="img/linkedin.svg" alt="GitHub">
+                </a>
+                <a href="" target="_blank" class="social cv" title="CV">
+                    <img src="img/cv.svg" alt="GitHub">
+                </a>
+            </div>
+        </div>
     </section>
 
     <main>
@@ -64,7 +81,7 @@
         </section>
 
         <section id ="contacto">
-            <h2>Contacto</h2>
+            <h2>¿Hablamos?</h2>
             <form id="contact-form">
                 <label for="nombre">Nombre:</label>
                 <input type="text" id="nombre" name="nombre" required>

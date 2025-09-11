@@ -1,5 +1,5 @@
 :root {
-    font-family: system-ui, sans-serif;
+    font-family: 'Montserrat', sans-serif;
     line-height: 1.6;
 }
 
@@ -8,6 +8,8 @@ body {
     flex-direction: column;
     min-height: 100vh;
     margin: 0;
+    background: #0f0f0f;
+    color: #fff;
 }
 
 header {
@@ -15,30 +17,90 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 1rem 2rem;
-    background: #f5f5f5;
+    background: #000000;
+    color: #fff;
+    box-shadow: 0 0 15px 10px rgba(255, 0, 0, 0.082);
+}
+
+nav a {
+    margin-right: 1rem;
+    text-decoration: none;
+    color: #ffffff;
 }
 
 .profile-pic {
     width: 225px;
     height: 225px;
     border-radius: 50%;
-    border: 2px solid #ddd;
     object-fit: cover;
     float: left;
-    shape-outside: circle();
+
     margin-right: 1.5rem;
     margin-bottom: 1rem;
+    box-shadow: 0 0 15px 10px rgba(255, 0, 0, 0.082);
 }
 
 #intro {
-    padding: 1rem 2rem;
+    display: flex;
+    align-items: flex-start;
+    padding: 3rem 2rem;
     padding-left: 18vw;
     height: auto;
 }
 
+.intro-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; 
+}
+
+.intro-actions {
+  display: flex;
+  margin-top: 0;
+}
+
+.intro-actions a img {
+  width: 40px;   
+  height: 40px;
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.intro-actions a img:hover {
+  transform: scale(1.2);
+  filter: drop-shadow(0 0 6px rgba(255, 0, 0, 0.7));
+}
+
+.social {
+  position: relative; 
+  display: inline-block;
+  margin: 0 0.75rem;
+}
+
+.social::after {
+  content: attr(title); 
+  position: absolute;
+  bottom: -2rem; 
+  left: 50%;
+  transform: translateX(-50%);
+  background: #333; 
+  color: white;
+  padding: 0.3rem 0.6rem;
+  font-size: 0.75rem;
+  border-radius: 5px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  white-space: nowrap;
+}
+
+.social:hover::after {
+  opacity: 1;
+  transform: translateX(-50%) translateY(5px); 
+}
+
 #intro p {
     line-height: 1.6;
-    max-width: 975px;
+    max-width: 1100px;
     font-size: large;
     margin-top: -0.15rem;
 }
@@ -46,15 +108,15 @@ header {
 #terminal {
     font-family: 'Consolas', monospace;
     font-size: 2.5rem;
-    color: #000000;
-    background: #ffffff;
+    color: #ffffff;
+    background: #ffffff00;
     padding: 1rem;
     border-radius: 5px;
     width: fit-content;
     display: inline-block;
-    margin-bottom: 2rem;
+    margin-bottom: -2rem;
     position: relative;
-    top: 35px
+    top: -20px
 }
 
 .cursor {
@@ -157,11 +219,11 @@ button.next {
     width: 12px;
     height: 12px;
     border-radius: 50%;
-    background-color: #ccc;
+    background-color: #b3afaf;
 }
 
 .timeline-item.current::before {
-    background-color: #333; 
+    background-color: #ffffff; 
 }
 
 .timeline-item p {
@@ -218,10 +280,6 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-nav a {
-    margin-right: 1rem;
-    text-decoration: none;
-    color: #333;
+    background: #000000;
+    box-shadow: 0 -10px 15px rgba(255, 0, 0, 0.082);
 }
