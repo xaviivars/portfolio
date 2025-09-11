@@ -25,44 +25,53 @@ header {
     border: 2px solid #ddd;
     object-fit: cover;
     float: left;
-    shape-outside: circle(); 
+    shape-outside: circle();
     margin-right: 1.5rem;
     margin-bottom: 1rem;
 }
 
-#intro{
+#intro {
     padding: 1rem 2rem;
-    padding-left: 25vw;
+    padding-left: 18vw;
     height: auto;
 }
 
 #intro p {
-  line-height: 1.6;
-  max-width: 1000px;
-  font-size: large;
+    line-height: 1.6;
+    max-width: 975px;
+    font-size: large;
+    margin-top: -0.15rem;
 }
 
 #terminal {
-  font-family: 'Consolas', monospace;
-  font-size: 2.5rem;
-  color: #000000;
-  background: #ffffff;
-  padding: 1rem;
-  border-radius: 5px;
-  width: fit-content;
-  display: inline-block;
-  margin-bottom: 2rem;
-  position: relative;
-  top: 35px
+    font-family: 'Consolas', monospace;
+    font-size: 2.5rem;
+    color: #000000;
+    background: #ffffff;
+    padding: 1rem;
+    border-radius: 5px;
+    width: fit-content;
+    display: inline-block;
+    margin-bottom: 2rem;
+    position: relative;
+    top: 35px
 }
 
 .cursor {
-  animation: blink 0.7s infinite;
+    animation: blink 0.7s infinite;
 }
 
 @keyframes blink {
-  0%, 50% { opacity: 1; }
-  51%, 100% { opacity: 0; }
+
+    0%,
+    50% {
+        opacity: 1;
+    }
+
+    51%,
+    100% {
+        opacity: 0;
+    }
 }
 
 main {
@@ -90,23 +99,89 @@ main {
     text-align: center;
     border-radius: 8px;
     box-sizing: border-box;
-    aspect-ratio: 16 / 9;  
+    aspect-ratio: 16 / 9;
 }
 
-button.prev, button.next {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: #333;
-  color: #fff;
-  border: none;
-  padding: 0.5rem 1rem;
-  cursor: pointer;
-  z-index: 10;
+button.prev,
+button.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #333;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    z-index: 10;
 }
 
-button.prev { left: 0; }
-button.next { right: 0; }
+button.prev {
+    left: 0;
+}
+
+button.next {
+    right: 0;
+}
+
+/* =========================
+   TIMELINE (experiencia)
+   ========================= */
+
+.timeline {
+    position: relative;
+    margin-left: 2rem;
+    padding-left: 1rem;
+}
+
+.timeline-line {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 4px;
+    height: 100%;
+    background-color: #333;
+    border-radius: 2px;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 2rem;
+    padding-left: 1.5rem; 
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -1.25rem;       
+    top: 0.5rem;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #ccc;
+}
+
+.timeline-item.current::before {
+    background-color: #333; 
+}
+
+.timeline-item p {
+    margin: 0;
+}
+
+.timeline-logo {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    margin-left: 0.25rem;
+    border-radius: 20%;
+}
+
+.timeline-date {
+    display: block;
+    font-size: 0.7rem;
+    color: #777;
+    margin-bottom: 0.5rem;
+}
 
 #contact-form {
     display: flex;
@@ -118,23 +193,23 @@ button.next { right: 0; }
 
 #contact-form input,
 #contact-form textarea {
-  padding: 0.5rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-family: inherit;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: inherit;
 }
 
 #contact-form button {
-  padding: 0.5rem 1rem;
-  border: none;
-  background: #333;
-  color: #fff;
-  cursor: pointer;
-  border-radius: 4px;
+    padding: 0.5rem 1rem;
+    border: none;
+    background: #333;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 4px;
 }
 
 #contact-form button:hover {
-  background: #555;
+    background: #555;
 }
 
 footer {
