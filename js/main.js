@@ -11,14 +11,23 @@ const next = document.querySelector('.next'); // Botón siguiente
 let index = 0; // Índice del slide actual
 let autoplayInterval; // Intervalo para autoplay
 let autoplayDelay = 5000; // Tiempo entre slides (ms)
+let autoplayTimeout;
 
 // Función para mostrar el slide correspondiente al índice
 function showSlide(i) {
+  if (i < 0) i = slides.length - 1;
+  if (i >= slides.length) i = 0;
+  index = i;
+
   slidesContainer.style.transform = `translateX(-${i * 100}%)`;
+
+    dots.forEach(dot => dot.classList.remove("active"));
+  dots[i].classList.add("active");
 }
 
 // Inicia el autoplay del carrusel
 function startAutoplay() {
+  clearInterval(autoplayInterval);
   autoplayInterval = setInterval(() => {
     index = (index + 1) % slides.length;
     showSlide(index);
@@ -29,6 +38,9 @@ function startAutoplay() {
 function resetAutoplay() {
   clearInterval(autoplayInterval);
   setTimeout(startAutoplay, autoplayDelay);
+  autoplayTimeout = setTimeout(() => {
+    startAutoplay();
+  }, autoplayDelay);
 }
 
 // Eventos para los botones (prev)
@@ -48,8 +60,14 @@ next.addEventListener('click', () => {
 const carrusel = document.querySelector('.carrusel');
 
 // Pausa autoplay al pasar el mouse sobre el carrusel
-carrusel.addEventListener('mouseenter', () => clearInterval(autoplayInterval));
-carrusel.addEventListener('mouseleave', () => startAutoplay());
+carrusel.addEventListener('mouseenter', () => {
+  clearInterval(autoplayInterval);
+  clearTimeout(autoplayTimeout); // cancelar cualquier reinicio pendiente
+});
+
+carrusel.addEventListener('mouseleave', () => {
+  startAutoplay();
+});
 
 // Inicia autoplay al cargar
 startAutoplay();
@@ -101,3 +119,18 @@ function typeWriterLoop() {
 }
 
 typeWriterLoop();
+
+// ====================
+// Indicadores en el carrusel
+// ====================
+
+const dots = document.querySelectorAll(".dot");
+
+dots.forEach((dot, i) => {
+  dot.addEventListener("click", () => {
+    showSlide(i);
+    resetAutoplay();
+  });
+});
+
+showSlide(0); 
