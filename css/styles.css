@@ -424,6 +424,24 @@ button.next {
     background: #555;
 }
 
+.btn-mail {
+    display: inline-block;
+    padding: 12px 20px;
+    margin-top: 10px;
+    background: rgba(255,0,0,0.5);
+    color: #fff;
+    font-weight: bold;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background 0.3s ease;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.btn-mail:hover {
+    background: #005fcc;
+}
+
+
 /* =========================
    FOOTER
    ========================= */
