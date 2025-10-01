@@ -3,14 +3,18 @@
 // ====================
 
 // Selección de elementos
+document.addEventListener('DOMContentLoaded', () => {
 const slides = document.querySelectorAll('.slide'); // Todos los slides
 const slidesContainer = document.querySelector('.slides'); // Contenedor de los slides
 const prev = document.querySelector('.prev'); // Botón anterior
 const next = document.querySelector('.next'); // Botón siguiente
+const dots = document.querySelectorAll(".dot");
+const typed = document.getElementById("typed");
+const text = " Xavier Ivars";
 
 let index = 0; // Índice del slide actual
 let autoplayInterval; // Intervalo para autoplay
-let autoplayDelay = 5000; // Tiempo entre slides (ms)
+let autoplayDelay = 8000; // Tiempo entre slides (ms)
 let autoplayTimeout;
 
 // Función para mostrar el slide correspondiente al índice
@@ -80,7 +84,7 @@ const form = document.getElementById('contact-form'); // Formulario
 const formStatus = document.getElementById('form-status'); // Mensaje de estado
 
 // Evento al enviar el formulario
-form.addEventListener('submit', (e) => {
+/*form.addEventListener('submit', (e) => {
   e.preventDefault(); // Evita recargar la página
 
   const nombre = document.getElementById('nombre').value;
@@ -93,18 +97,15 @@ form.addEventListener('submit', (e) => {
 
   form.reset();
 });
+*/
 
 // ====================
 // Animación de terminal
 // ====================
 
-const text = " Xavier Ivars";
-const typed = document.getElementById("typed");
-let i = 0;
-
 function typeWriterLoop() {
+  let i = 0;
   typed.textContent = "";
-  i = 0;
 
   function loop() {
     if (i < text.length) {
@@ -118,13 +119,9 @@ function typeWriterLoop() {
   loop();
 }
 
-typeWriterLoop();
-
 // ====================
 // Indicadores en el carrusel
 // ====================
-
-const dots = document.querySelectorAll(".dot");
 
 dots.forEach((dot, i) => {
   dot.addEventListener("click", () => {
@@ -134,3 +131,6 @@ dots.forEach((dot, i) => {
 });
 
 showSlide(0); 
+typeWriterLoop();
+});
+
