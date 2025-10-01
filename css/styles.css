@@ -395,11 +395,12 @@ button.next {
    ========================= */
 
 .tech-cards {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    flex-wrap: wrap;
-    margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+
 }
 
 .card {
@@ -409,7 +410,7 @@ button.next {
   text-align: center;
   min-width: 200px;
   flex: 1; 
-  max-width: 800px;
+  max-width: 600px;
   box-shadow: 0 0 10px rgba(255,0,0,0.1);
 }
 
@@ -515,11 +516,92 @@ button.next {
    ========================= */
 
 footer {
-    background: #f5f5f5;
     padding: 1rem;
     display: flex;
     justify-content: center;
     align-items: center;
     background: #000000;
     box-shadow: 0 -10px 15px rgba(255, 0, 0, 0.082);
+}
+
+/* =========================
+   MEDIA QUERIES
+   ========================= */
+
+/* Tablets (pantallas medianas) */
+@media (max-width: 1024px) {
+  header {
+    padding: 1rem;
+  }
+
+  nav a {
+    margin-right: 1rem;
+  }
+
+  #intro {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .profile-pic {
+    float: none;
+    margin: 0 auto 1.5rem auto;
+  }
+
+  #terminal {
+    margin: 0 auto;   
+    top: 0;           
+    display: block;   
+    text-align: center;
+  }
+
+  #intro p {
+    font-size: medium;
+  }
+
+  .intro-actions {
+    justify-content: center;
+  }
+
+  .carrusel {
+    max-width: 90%;
+  }
+
+  .slide img {
+    width: 70%; 
+    max-height: 50%; 
+  }
+}
+
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 1.2rem;
+  }
+
+  nav a {
+    font-size: 0.8rem;
+  }
+
+  #terminal {
+    font-size: 1.5rem;
+  }
+
+  .profile-pic {
+    width: 180px;
+    height: 180px;
+  }
+
+  .slide-description {
+    text-align: left;
+  }
+
+  .btn-mail {
+    padding: 10px 16px;
+    font-size: 0.9rem;
+  }
+
+  footer small {
+    font-size: 0.75rem;
+  }
+
 }
